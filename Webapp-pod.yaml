@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: raj-app
+  labels:
+    app: raj-webapp
+spec:
+  containers:
+  - name: raj-container
+    image: 292055316436.dkr.ecr.us-east-1.amazonaws.com/raj:app_v0.1
+    ports:
+    - containerPort: 8080
+    env:
+    - name: DBHOST
+      value: ""
+    - name: DBUSER
+      value: "root"
+    - name: DBPWD
+      value: "pw"
+    - name: DATABASE
+      value: "employees"
+    - name: DBPORT
+      value: "3306"
+    - name: APP_COLOR
+      value: "green" # Or any other supported color
