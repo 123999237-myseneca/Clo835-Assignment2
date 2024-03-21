@@ -14,12 +14,12 @@ spec:
     spec:
       containers:
       - name: raj-container
-        image: 292055316436.dkr.ecr.us-east-1.amazonaws.com/raj:app_v0.1
+        image: 292055316436.dkr.ecr.us-east-1.amazonaws.com/raj:app_v0.2
         ports:
         - containerPort: 8080
         env:
         - name: DBHOST
-          value: ""
+          value: "10.244.0.15"
         - name: DBUSER
           value: "root"
         - name: DBPWD
@@ -29,4 +29,4 @@ spec:
         - name: DBPORT
           value: "3306"
         - name: APP_COLOR
-          value: "green" 
+          value: "pink" 

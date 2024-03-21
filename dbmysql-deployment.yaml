@@ -10,7 +10,7 @@ spec:
   template:
     metadata:
       labels:
-        app: employees
+        app: mysql
     spec:
       containers:
       - name: mysql-dbcontainer

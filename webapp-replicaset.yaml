@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
   name: raj-webapp-rs
+  labels:
+    app: employees
 spec:
   replicas: 3 
   selector:
@@ -16,17 +18,17 @@ spec:
       - name: raj-container
         image: 292055316436.dkr.ecr.us-east-1.amazonaws.com/raj:app_v0.1
         ports:
-        - containerPort: 8080
+          - containerPort: 8080
         env:
-        - name: DBHOST
-          value: ""
-        - name: DBUSER
-          value: "root"
-        - name: DBPWD
-          value: "pw"
-        - name: DATABASE
-          value: "employees"
-        - name: DBPORT
-          value: "3306"
-        - name: APP_COLOR
-          value: "green" # Or any other supported color
+          - name: DBHOST
+            value: "10.244.0.15"
+          - name: DBUSER
+            value: "root"
+          - name: DBPWD
+            value: "pw"
+          - name: DATABASE
+            value: "employees"
+          - name: DBPORT
+            value: "3306"
+          - name: APP_COLOR
+            value: "green" 
